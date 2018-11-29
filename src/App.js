@@ -19,7 +19,7 @@ class App extends Component {
     error: undefined
   }
 
-  getWeather = async (e) => {
+  getWeather = async e => {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
@@ -34,7 +34,7 @@ class App extends Component {
         humidity: data.main.humidity,
         description: data.weather[0].description,
         error: ""
-      });
+      })
     } else {
       this.setState({
         temperature: undefined,
@@ -43,7 +43,7 @@ class App extends Component {
         humidity: undefined,
         description: undefined,
         error: "Please enter City and Country!"
-      });
+      })
     }
   }
   render() {
@@ -53,10 +53,10 @@ class App extends Component {
           <div className="main">
             <div className="container">
               <div className="row">
-                <div className="col-sx-5 title-container">
+                <div className="title-container">
                   <Titles />
                 </div>
-                <div className="col-xs-7 form-container">
+                <div className="form-container">
                   <Form getWeather={this.getWeather} />
                   <Weather 
                     temperature={this.state.temperature}
