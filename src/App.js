@@ -11,11 +11,12 @@ const API_KEY = "f322c16ca21d9c08b54608cf88c9971a";
 
 class App extends Component {
   state = {
-    temperature: undefined,
     city: undefined,
     country: undefined,
+    temperature: undefined,
     humidity: undefined,
     description: undefined,
+    icon: undefined,
     error: undefined
   }
 
@@ -28,11 +29,12 @@ class App extends Component {
     const data = await api_call.json();
     if(city && country) {
       this.setState({
-        temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
+        temperature: Math.floor(data.main.temp),
         humidity: data.main.humidity,
-        description: data.weather[0].description,
+        description: data.weather[0].main,
+        icon: "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png",
         error: ""
       })
     } else {
@@ -45,7 +47,9 @@ class App extends Component {
         error: "Please enter City and Country!"
       })
     }
+    // console.log(data)
   }
+
   render() {
     return (
       <div>
@@ -57,13 +61,14 @@ class App extends Component {
                   <Titles />
                 </div>
                 <div className="form-container">
-                  <Form getWeather={this.getWeather} />
+                  <Form getWeather={this.getWeather}/>
                   <Weather 
                     temperature={this.state.temperature}
                     city={this.state.city}
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
+                    icon={this.state.icon}
                     error={this.state.error}
                   />
                 </div>

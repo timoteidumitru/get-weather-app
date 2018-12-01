@@ -132,6 +132,8 @@ button:active {
   padding: 15px;
   font-size: 1.5rem;
   font-weight: 400;
+  width: 100%;
+  text-align: left;
 }
 
 .weather__key:last-child {
@@ -144,6 +146,13 @@ button:active {
   text-transform: capitalize;
 }
 
+.icon-show {
+  background-color: #000;
+  border-radius: 12px;
+  position: relative;
+  right: -35px;
+}
+
 .weather__error {
   width: 100%;
   color: #240e57;
@@ -154,13 +163,16 @@ button:active {
 
 .footer {
   background-color: transparent;
-  height: 4.7vh;
+  height: 3.7vh;
   padding: 0.2rem 0.1rem 0 0;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
+  bottom: 0;
   background-color: #fff;
   overflow: hidden;
+  margin-top: 0.6em;
+  padding-top: 0;
 }
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 480px) {
@@ -198,12 +210,18 @@ button:active {
   .weather__key{
     line-height: 1.1em;
     padding: 0.2em;
+    text-align: center;
   }
   .weather__value{
     widows: 100%;
     display: block;
   }
+  .icon-show {
+    position: relative;
+    right: 0;
+  }
   .footer {
+    padding-top: 0.5em;
     bottom: 0;
     position: fixed;
     width: 100%;

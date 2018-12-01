@@ -17,9 +17,10 @@ const Weather = props => (
         <span className="weather__value">{ props.humidity }%</span>
         </p> 
       }
-      { 
+      {
         props.description && <p className="weather__key">Conditions: &nbsp;
         <span className="weather__value">{ props.description }</span>
+        <img src={props.icon} className="icon-show" alt="img-condition"/>
         </p> 
       }
       { 
