@@ -133,7 +133,6 @@ button:active {
   font-size: 1.5rem;
   font-weight: 400;
   width: 100%;
-  text-align: left;
 }
 
 .weather__key:last-child {
@@ -150,7 +149,8 @@ button:active {
   background-color: #000;
   border-radius: 12px;
   position: relative;
-  right: -35px;
+  margin-left: 0.5em;
+  /* right: -35px; */
 }
 
 .weather__error {
@@ -215,10 +215,6 @@ button:active {
   .weather__value{
     widows: 100%;
     display: block;
-  }
-  .icon-show {
-    position: relative;
-    right: 0;
   }
   .footer {
     padding-top: 0.5em;
